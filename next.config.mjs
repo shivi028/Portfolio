@@ -1,4 +1,10 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    images: {
+      domains: ['github-readme-streak-stats.herokuapp.com'], // Add 'github.com' to allow images from this domain
+    },
+  };
+  
+  export default nextConfig;
+  
