@@ -23,8 +23,8 @@ export default function Navbar() {
       }`}
     >
       {/* Logo and Navigation */}
-      <Link href="#" className="flex items-center" prefetch={false}>
-        <MountainIcon className="h-6 w-6" />
+      <Link href="/" className="flex items-center text-headcolor font-extrabold text-2xl" >
+        SH!V!
         <span className="sr-only">My Portfolio</span>
       </Link>
       
@@ -42,12 +42,12 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="#" className="text-sm font-medium hover:underline hover:text-[#E85A71] underline-offset-4" prefetch={false}>
+            <Link href="/resume" className="text-sm font-medium hover:underline hover:text-[#E85A71] underline-offset-4" prefetch={false}>
               Resume
             </Link>
           </li>
           <li>
-            <Link href="#" className="text-sm font-medium hover:underline hover:text-[#E85A71] underline-offset-4" prefetch={false}>
+            <Link href="/certificate" className="text-sm font-medium hover:underline hover:text-[#E85A71] underline-offset-4" prefetch={false}>
               Certifications
             </Link>
           </li>
