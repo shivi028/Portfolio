@@ -32,7 +32,7 @@ export default function Navbar() {
       <nav className="hidden md:flex">
         <ul className="flex items-center gap-6">
           <li>
-            <Link href="/about" className="text-sm font-medium hover:underline hover:text-[#E85A71] underline-offset-4" prefetch={false}>
+            <Link href="/about" className="text-sm font-medium hover:underline hover:text-[#E85A71] underline-offset-4 cursor-pointer" >
               About
             </Link>
           </li>
@@ -52,7 +52,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="#" className="text-sm font-medium hover:underline hover:text-[#E85A71] underline-offset-4" prefetch={false}>
+            <Link href="/contact" className="text-sm font-medium hover:underline hover:text-[#E85A71] underline-offset-4" prefetch={false}>
               Contact
             </Link>
           </li>
@@ -82,7 +82,7 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="left">
             <div className="grid gap-2 py-6">
-              <Link href="/about" className="flex w-full items-center py-2 text-lg font-semibold">
+              <Link href="/about" className="flex w-full items-center py-2 text-lg font-semibold cursor-pointer">
                 About
               </Link>
               <Link href="/project" className="flex w-full items-center py-2 text-lg font-semibold" >
