@@ -37,7 +37,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="#" className="text-sm font-medium hover:underline hover:text-[#E85A71] underline-offset-4" prefetch={false}>
+            <Link href="/project" className="text-sm font-medium hover:underline hover:text-[#E85A71] underline-offset-4" prefetch={false}>
               Projects
             </Link>
           </li>
