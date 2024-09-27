@@ -1,27 +1,63 @@
-"use client"
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+"use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface Certificate {
-  id: number
-  title: string
-  issuer: string
-  date: string
-  image: string
+  id: number;
+  title: string;
+  issuer: string;
+  date: string;
+  image: string;
 }
 
 const certificates: Certificate[] = [
-  { id: 1, title: "Web Development", issuer: "Codecademy", date: "2023", image: "/Images/postman certificate.png" },
-  { id: 2, title: "UX Design", issuer: "Google", date: "2022", image: "/Images/postman certificate.png" },
-  { id: 3, title: "Data Science", issuer: "DataCamp", date: "2023", image: "/Images/postman certificate.png" },
-  { id: 4, title: "Machine Learning", issuer: "Coursera", date: "2022", image: "/Images/postman certificate.png" },
-  { id: 5, title: "Cloud Computing", issuer: "AWS", date: "2023", image: "/Images/postman certificate.png" },
-  { id: 6, title: "Cybersecurity", issuer: "CompTIA", date: "2022", image: "/Images/postman certificate.png" },
-]
+  {
+    id: 1,
+    title: "Web Development",
+    issuer: "Codecademy",
+    date: "2023",
+    image: "/Images/postman certificate.png",
+  },
+  {
+    id: 2,
+    title: "UX Design",
+    issuer: "Google",
+    date: "2022",
+    image: "/Images/postman certificate.png",
+  },
+  {
+    id: 3,
+    title: "Data Science",
+    issuer: "DataCamp",
+    date: "2023",
+    image: "/Images/postman certificate.png",
+  },
+  {
+    id: 4,
+    title: "Machine Learning",
+    issuer: "Coursera",
+    date: "2022",
+    image: "/Images/postman certificate.png",
+  },
+  {
+    id: 5,
+    title: "Cloud Computing",
+    issuer: "AWS",
+    date: "2023",
+    image: "/Images/postman certificate.png",
+  },
+  {
+    id: 6,
+    title: "Cybersecurity",
+    issuer: "CompTIA",
+    date: "2022",
+    image: "/Images/postman certificate.png",
+  },
+];
 
 export default function CertificateSection() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null)
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
     <section className="bg-gradient-to-b from-white to-[#eed6da] py-16 px-4 sm:px-6 lg:px-8">
@@ -30,7 +66,7 @@ export default function CertificateSection() {
           Certifications
         </h2>
         <p className="text-xl text-gray-500 text-center mb-12">
-          Showcasing commitment to continuous learning 
+          Showcasing commitment to continuous learning
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificates.map((cert) => (
@@ -41,20 +77,22 @@ export default function CertificateSection() {
               onHoverStart={() => setHoveredId(cert.id)}
               onHoverEnd={() => setHoveredId(null)}
             >
-              <Image 
-                src={cert.image} 
-                alt={`${cert.title} certificate`} 
+              <Image
+                src={cert.image}
+                alt={`${cert.title} certificate`}
                 width={300}
                 height={400}
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-headcolor mb-2">{cert.title}</h3>
+                <h3 className="text-lg font-semibold text-headcolor mb-2">
+                  {cert.title}
+                </h3>
                 <p className="text-gray-600 mb-1">Issued by: {cert.issuer}</p>
                 <p className="text-gray-500 text-sm">Date: {cert.date}</p>
               </div>
               {hoveredId === cert.id && (
-                <motion.div 
+                <motion.div
                   className="absolute shadow-lg inset-0  flex items-center justify-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -69,5 +107,5 @@ export default function CertificateSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

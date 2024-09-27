@@ -1,204 +1,169 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Github, Globe, ChevronRight, ChevronLeft } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 interface Project {
-  id: number;
-  name: string;
+  title: string;
+  projectImg: string;
   description: string;
   techStack: string[];
-  githubLink: string;
-  deploymentLink: string;
-  image: string;
+  githubUrl: string;
+  demoUrl: string;
 }
 
 const projects: Project[] = [
   {
-    id: 1,
-    name: "Project Alpha",
+    title: "PROJECT ALPHA",
+    projectImg: "/Images/tic_tac_toe.png",
     description:
       "A revolutionary app that changes the way we think about productivity.",
     techStack: ["React", "Node.js", "MongoDB"],
-    githubLink: "https://github.com/username/project-alpha",
-    deploymentLink: "https://project-alpha.com",
-    image: "/Images/github.svg",
+    githubUrl: "https://github.com/project-alpha",
+    demoUrl: "https://project-alpha-demo.com",
   },
   {
-    id: 2,
-    name: "Beta Boost",
+    title: "PROJECT L",
+    projectImg: "/Images/tic_tac_toe.png",
     description:
-      "Elevating user experiences through intuitive design and powerful functionality.",
-    techStack: ["Vue.js", "Express", "PostgreSQL"],
-    githubLink: "https://github.com/username/beta-boost",
-    deploymentLink: "https://beta-boost.com",
-    image: "/Images/github.svg",
+      "A revolutionary app that changes the way we think about productivity.",
+    techStack: ["React", "Node.js", "MongoDB"],
+    githubUrl: "https://github.com/project-l",
+    demoUrl: "https://project-l-demo.com",
   },
   {
-    id: 3,
-    name: "Gamma Glide",
+    title: "PROJECT C",
+    projectImg: "/Images/tic_tac_toe.png",
     description:
-      "Seamlessly connecting users with the information they need, when they need it.",
-    techStack: ["Angular", "Django", "MySQL"],
-    githubLink: "https://github.com/username/gamma-glide",
-    deploymentLink: "https://gamma-glide.com",
-    image: "/Images/github.svg",
+      "A revolutionary app that changes the way we think about productivity.",
+    techStack: ["React", "Node.js", "MongoDB"],
+    githubUrl: "https://github.com/project-c",
+    demoUrl: "https://project-c-demo.com",
   },
+  {
+    title: "PROJECT B",
+    projectImg: "/Images/tic_tac_toe.png",
+    description:
+      "A revolutionary app that changes the way we think about productivity.",
+    techStack: ["React", "Node.js", "MongoDB"],
+    githubUrl: "https://github.com/project-b",
+    demoUrl: "https://project-b-demo.com",
+  },
+  // Add more projects here
 ];
 
 export default function ProjectCards() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
+  const [currentProject, setCurrentProject] = useState(0);
 
   const nextProject = () => {
-    setDirection(1);
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    setCurrentProject((prev) => (prev + 1) % projects.length);
   };
 
   const prevProject = () => {
-    setDirection(-1);
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + projects.length) % projects.length
-    );
-  };
-
-  useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      if (e.deltaY < 0) {
-        setDirection(-1); // Scroll up
-        prevProject();
-      } else if (e.deltaY > 0) {
-        setDirection(1); // Scroll down
-        nextProject();
-      }
-    };
-
-    window.addEventListener("wheel", handleWheel);
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
-
-  const variants = {
-    enter: (direction: number) => ({
-      y: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    }),
-    center: {
-      zIndex: 1,
-      y: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      y: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-    }),
+    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
   return (
-    <div className="bg-gradient-to-r from-purple-700 to-indigo-800 min-h-screen py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
-      <h2 className="text-4xl font-extrabold text-center text-white mb-12">
-        My Projects
-      </h2>
-      <div className="relative w-full max-w-4xl">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              y: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-            }}
-            className="absolute w-full"
+    <>
+      <div className="min-h-[90.7vh] ">
+        <div className="flex min-h-[90.7vh] flex-col items-center justify-center font-roboto bg-gradient-to-br p-4 from-red-200 via-rose-300 to-red-400">
+          <motion.h1
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl font-extrabold text-slate-700 mb-8"
           >
-            <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-500 hover:scale-105">
-              <div className="md:flex">
-                <div className="md:flex-shrink-0">
-                  <img
-                    className="h-48 w-full object-cover md:w-48"
-                    src={projects[currentIndex].image}
-                    alt={projects[currentIndex].name}
+            PROJECTS
+          </motion.h1>
+          <div className="relative w-full max-w-2xl">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute -left-[10%] top-1/2 transform -translate-y-1/2 z-10"
+              onClick={prevProject}
+            >
+              <ChevronLeft className="h-8 w-8 text-slate-800 hover:text-rose-400" />
+            </Button>
+
+            {/* Render the current project */}
+            <motion.div
+              key={currentProject}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.4 }}
+              className="bg-slate-800 rounded-lg shadow-lg p-6 "
+            >
+              <div className="flex items-center mb-4">
+                <div className="w-[350px] h-[280px] bg-gray-200 mr-4 flex items-center justify-center">
+                  <Image
+                    src={projects[currentProject].projectImg}
+                    alt={projects[currentProject].title}
+                    width={350}
+                    height={280}
                   />
                 </div>
-                <div className="p-8">
-                  <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-                    {projects[currentIndex].name}
-                  </div>
-                  <p className="mt-2 text-gray-500">
-                    {projects[currentIndex].description}
+                <div>
+                  <h2 className="text-2xl font-semibold text-pink-200">
+                    {projects[currentProject].title}
+                  </h2>
+                  <p className="text-pink-100">
+                    {projects[currentProject].description}
                   </p>
-                  <div className="mt-4">
-                    <span className="text-gray-500 font-medium">
-                      Tech Stack:{" "}
-                    </span>
-                    {projects[currentIndex].techStack.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-4 flex space-x-4">
-                    <a
-                      href={projects[currentIndex].githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-indigo-600 hover:text-indigo-800 transition duration-300 flex items-center"
-                    >
-                      <Github className="w-5 h-5 mr-2" />
-                      GitHub
-                    </a>
-                    <a
-                      href={projects[currentIndex].deploymentLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-indigo-600 hover:text-indigo-800 transition duration-300 flex items-center"
-                    >
-                      <Globe className="w-5 h-5 mr-2" />
-                      Live Demo
-                    </a>
-                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-        <button
-          onClick={prevProject}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full bg-white rounded-full p-2 shadow-lg text-indigo-600 hover:text-indigo-800 transition duration-300"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button
-          onClick={nextProject}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-full bg-white rounded-full p-2 shadow-lg text-indigo-600 hover:text-indigo-800 transition duration-300"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
+              <div className="mb-4">
+                <h3 className="text-lg font-semibold text-pink-100 mb-2">
+                  Tech Stack:
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {projects[currentProject].techStack.map((tech) => (
+                    <Badge key={tech} variant="secondary">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+              <div className="flex justify-between">
+                <Button
+                  variant="outline"
+                  className="flex items-center bg-white w-[17%] hover:bg-gray-200"
+                >
+                  <Image
+                    src={"/Images/github.svg"}
+                    alt="GitHub"
+                    height={35}
+                    width={35}
+                  />
+                </Button>
+                <Button
+                  variant="default"
+                  className="flex items-center bg-white hover:bg-gray-200 text-slate-800"
+                  onClick={() =>
+                    window.open(projects[currentProject].demoUrl, "_blank")
+                  }
+                >
+                  <ExternalLink className="mr-2 h-4 w-4 text-slate-800" />
+                  Live Demo
+                </Button>
+              </div>
+            </motion.div>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute -right-[10%] top-1/2 transform -translate-y-1/2 z-10"
+              onClick={nextProject}
+            >
+              <ChevronRight className="h-8 w-8 text-slate-800 hover:text-rose-400" />
+            </Button>
+          </div>
+        </div>
       </div>
-      <div className="mt-8 flex justify-center space-x-2">
-        {projects.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setDirection(index > currentIndex ? 1 : -1); // Set the direction based on index
-              setCurrentIndex(index);
-            }}
-            className={`w-3 h-3 rounded-full ${
-              index === currentIndex ? "bg-white" : "bg-gray-400"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
+    </>
   );
 }

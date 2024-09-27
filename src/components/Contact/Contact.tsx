@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Send, Linkedin, } from 'lucide-react'
-import Image from 'next/image'
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Send, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export default function FancyContactPage() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission logic here
-    console.log('Form submitted:', { name, email, message })
-    setName('')
-    setEmail('')
-    setMessage('')
-  }
+    console.log("Form submitted:", { name, email, message });
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
 
   return (
     <div className="min-h-[90vh] bg-gradient-to-br from-white to-[#f9ccd4] flex items-center justify-center p-4 font-roboto">
@@ -59,14 +59,29 @@ export default function FancyContactPage() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="flex items-center space-x-4"
             >
-              <a href="https://github.com/shivi028" target='_blank'>
-                <Image src={'/Images/github.svg'} alt='github' width={40} height={40} className='text-headcolor' />
+              <a href="https://github.com/shivi028" target="_blank">
+                <Image
+                  src={"/Images/github.svg"}
+                  alt="github"
+                  width={40}
+                  height={40}
+                  className="text-headcolor"
+                />
               </a>
-              <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-purple-600 transition-colors"
+              >
                 <Linkedin size={24} />
               </a>
               <a href="">
-                <Image src={'/Images/instagram.svg'} alt='github' width={30} height={30} className='text-headcolor' />
+                <Image
+                  src={"/Images/instagram.svg"}
+                  alt="github"
+                  width={30}
+                  height={30}
+                  className="text-headcolor"
+                />
               </a>
             </motion.div>
             <motion.div
@@ -74,8 +89,13 @@ export default function FancyContactPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
             >
-              <h2 className="text-xl font-semibold mb-2 text-gray-800">Email:</h2>
-              <a href="mailto:tiwarishivi028+web@gmail.com" className="text-headcolor text-[1.1rem] flex items-center hover:underline">
+              <h2 className="text-xl font-semibold mb-2 text-gray-800">
+                Email:
+              </h2>
+              <a
+                href="mailto:tiwarishivi028+web@gmail.com"
+                className="text-headcolor text-[1.1rem] flex items-center hover:underline"
+              >
                 <Mail className="mr-2" size={18} />
                 tiwarishivi028@gmail.com
               </a>
@@ -87,10 +107,15 @@ export default function FancyContactPage() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="bg-white p-6 rounded-lg shadow-lg"
           >
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">Contact form:</h2>
+            <h2 className="text-2xl font-bold mb-6 text-gray-800">
+              Contact form:
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-700">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-1 text-gray-700"
+                >
                   Name
                 </label>
                 <Input
@@ -102,7 +127,10 @@ export default function FancyContactPage() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-700">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-1 text-gray-700"
+                >
                   Email address
                 </label>
                 <Input
@@ -115,7 +143,10 @@ export default function FancyContactPage() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1 text-gray-700">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-1 text-gray-700"
+                >
                   Message
                 </label>
                 <Textarea
@@ -126,7 +157,10 @@ export default function FancyContactPage() {
                   className="min-h-[150px] w-full"
                 />
               </div>
-              <Button type="submit" className="w-full border border-white bg-gradient-to-r from-[#f4a5b3] to-headcolor hover:text-headcolor hover:border hover:border-headcolor hover:bg-gradient-to-r hover:from-white hover:to-white  transition-all duration-100 ease-in hover:ease-out text-white">
+              <Button
+                type="submit"
+                className="w-full border border-white bg-gradient-to-r from-[#f4a5b3] to-headcolor hover:text-headcolor hover:border hover:border-headcolor hover:bg-gradient-to-r hover:from-white hover:to-white  transition-all duration-100 ease-in hover:ease-out text-white"
+              >
                 <Send className="mr-2" size={18} />
                 Submit
               </Button>
@@ -135,5 +169,5 @@ export default function FancyContactPage() {
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
