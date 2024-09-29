@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
@@ -69,27 +68,27 @@ export default function ProjectCards() {
 
   return (
     <>
-      <div className="min-h-[90.7vh] ">
-        <div className="flex min-h-[90.7vh] flex-col items-center justify-center font-roboto bg-gradient-to-br p-4 from-red-200 via-rose-300 to-red-400">
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl font-extrabold text-slate-700 mb-8"
+      <div className="md:min-h-[91.4vh] min-h-[92.9vh] flex flex-col items-center justify-center font-roboto bg-gradient-to-br from-red-200 via-rose-300 to-red-400 -pb-8">
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-extrabold text-slate-700 mb-8"
+        >
+          PROJECTS
+        </motion.h1>
+        <div className="relative w-full max-w-2xl">
+          {/* Left Arrow Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute -left-[10%] top-1/2 transform -translate-y-1/2 z-10 md:visible md:block hidden"
+            onClick={prevProject}
           >
-            PROJECTS
-          </motion.h1>
-          <div className="relative w-full max-w-2xl">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute -left-[10%] top-1/2 transform -translate-y-1/2 z-10"
-              onClick={prevProject}
-            >
-              <ChevronLeft className="h-8 w-8 text-slate-800 hover:text-rose-400" />
-            </Button>
+            <ChevronLeft className="h-8 w-8 text-slate-800 hover:text-rose-400" />
+          </Button>
 
-            {/* Render the current project */}
+          <div className="m-4">
             <motion.div
               key={currentProject}
               initial={{ opacity: 0, x: 100 }}
@@ -98,8 +97,8 @@ export default function ProjectCards() {
               transition={{ duration: 0.4 }}
               className="bg-slate-800 rounded-lg shadow-lg p-6 "
             >
-              <div className="flex items-center mb-4">
-                <div className="w-[350px] h-[280px] bg-gray-200 mr-4 flex items-center justify-center">
+              <div className="flex flex-col sm:flex-row items-center mb-4">
+                <div className="w-full sm:w-[350px] h-[280px] bg-gray-200 mb-4 sm:mb-0 flex items-center justify-center">
                   <Image
                     src={projects[currentProject].projectImg}
                     alt={projects[currentProject].title}
@@ -107,7 +106,7 @@ export default function ProjectCards() {
                     height={280}
                   />
                 </div>
-                <div>
+                <div className="text-center sm:text-left">
                   <h2 className="text-2xl font-semibold text-pink-200">
                     {projects[currentProject].title}
                   </h2>
@@ -132,6 +131,9 @@ export default function ProjectCards() {
                 <Button
                   variant="outline"
                   className="flex items-center bg-white w-[17%] hover:bg-gray-200"
+                  onClick={() =>
+                    window.open(projects[currentProject].githubUrl, "_blank")
+                  }
                 >
                   <Image
                     src={"/Images/github.svg"}
@@ -152,11 +154,32 @@ export default function ProjectCards() {
                 </Button>
               </div>
             </motion.div>
+          </div>
 
+          {/* Right Arrow Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute -right-[10%] top-1/2 transform -translate-y-1/2 z-10 md:visible md:block hidden"
+            onClick={nextProject}
+          >
+            <ChevronRight className="h-8 w-8 text-slate-800 hover:text-rose-400" />
+          </Button>
+
+          {/* Bottom Arrow Button for Small Screens */}
+          <div className="md:hidden flex justify-between w-full mt-4">
             <Button
               variant="ghost"
               size="icon"
-              className="absolute -right-[10%] top-1/2 transform -translate-y-1/2 z-10"
+              className="flex items-center"
+              onClick={prevProject}
+            >
+              <ChevronLeft className="h-8 w-8 text-slate-800 hover:text-rose-400" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="flex items-center"
               onClick={nextProject}
             >
               <ChevronRight className="h-8 w-8 text-slate-800 hover:text-rose-400" />

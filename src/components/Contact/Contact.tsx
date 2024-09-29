@@ -7,19 +7,48 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Send, Linkedin } from "lucide-react";
 import Image from "next/image";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function FancyContactPage() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", { name, email, message });
-    setName("");
-    setEmail("");
-    setMessage("");
+
+    try {
+      const res = await axios.post("/api/mail/send-email", formData);
+
+      if (res.status === 200) {
+        toast.success("Email sent successfully!", {
+        });
+      } else {
+        toast.error("Failed to send email.", {
+        });
+      }
+    } catch (error) {
+      toast.error("Error occurred while sending the email.", {
+      });
+    }
+
+    // Optionally reset form data
+    // setFormData({
+    //   name: "",
+    //   email: "",
+    //   message: "",
+    // });
   };
 
   return (
@@ -119,11 +148,12 @@ export default function FancyContactPage() {
                   Name
                 </label>
                 <Input
+                  type="text"
                   id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="w-full"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="border p-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
                 />
               </div>
               <div>
@@ -134,12 +164,12 @@ export default function FancyContactPage() {
                   Email address
                 </label>
                 <Input
-                  id="email"
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="border p-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
                 />
               </div>
               <div>
@@ -151,10 +181,10 @@ export default function FancyContactPage() {
                 </label>
                 <Textarea
                   id="message"
-                  value={message}
-                  onChange={(e: any) => setMessage(e.target.value)}
-                  required
-                  className="min-h-[150px] w-full"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="min-h-[150px] w-full focus:outline-none focus:ring-2"
                 />
               </div>
               <Button
@@ -168,6 +198,8 @@ export default function FancyContactPage() {
           </motion.div>
         </div>
       </motion.div>
+    
+      <ToastContainer />
     </div>
   );
 }

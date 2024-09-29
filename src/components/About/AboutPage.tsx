@@ -4,14 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
+
 const AboutPage = () => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <>
       <div className="min-h-[40vh] font-roboto m-6">
-        <div className="outer min-h-[40%] flex">
-          <div className="w-[35%] flex flex-col gap-y-3">
-            <div className="text-[4rem] font-semibold font-roboto tracking-tight ">
+        <div className="outer flex flex-col md:flex-row">
+          <div className="w-full md:w-[35%] flex flex-col gap-y-3">
+            <div className="text-[3.6rem] font-semibold font-roboto tracking-tighter md:tracking-tight ">
               I’m <span className="text-headcolor">Shivi Tiwari.</span> Nice to
               meet you.
             </div>
@@ -30,7 +31,7 @@ const AboutPage = () => {
                   <a href="">
                     <Image
                       src={"/Images/twitter.svg"}
-                      alt="github"
+                      alt="twitter"
                       width={40}
                       height={40}
                       className="text-headcolor"
@@ -52,7 +53,7 @@ const AboutPage = () => {
                   <a href="">
                     <Image
                       src={"/Images/instagram.svg"}
-                      alt="github"
+                      alt="instagram"
                       width={40}
                       height={40}
                       className="text-headcolor"
@@ -66,7 +67,7 @@ const AboutPage = () => {
                   >
                     <Image
                       src={"/Images/linkedin-original.svg"}
-                      alt="github"
+                      alt="linkedin"
                       width={40}
                       height={40}
                       className="text-headcolor"
@@ -74,7 +75,7 @@ const AboutPage = () => {
                   </a>
                 </div>
               </div>
-              <div className="mt-5 -ml-1 w-[35%] text-center p-2 rounded-lg bg-gradient-to-b from-white to-pink-100 text-headcolor font-extrabold text-sm hover:bg-gradient-to-b hover:from-white hover:to-pink-200 transition-all duration-75">
+              <div className="mt-8 w-full md:w-[35%] text-center p-2 rounded-lg bg-gradient-to-b from-white to-pink-100 text-headcolor font-extrabold text-sm hover:bg-gradient-to-b hover:from-white hover:to-pink-200 transition-all duration-75">
                 <Link
                   href={"/resume"}
                   className="bg-gradient from-white to-pink-50"
@@ -84,16 +85,16 @@ const AboutPage = () => {
               </div>
             </div>
           </div>
-          <span className="border-l mr-2 -ml-3" />
-          <div className="w-[70%]  p-2 text-gray-800 font-roboto text-[1.1rem]">
+          <span className="border-l mr-2 md:-ml-3" />
+          <div className="w-full md:w-[70%] p-2 text-gray-800 font-roboto text-[1.1rem] mt-4 md:mt-0">
             <p>
               I am a self-driven, career-oriented software developer
               specializing in front-end development and open-source, currently
-              pursuing a bachelors degree in computer science. My expertise lies
-              in building interactive web applications on the client side.
+              pursuing a bachelor's degree in computer science. My expertise
+              lies in building interactive web applications on the client side.
               Primarily working with technologies like JavaScript, Next.js,
-              TypeScript and Python.
-            </p>{" "}
+              TypeScript, and Python.
+            </p>
             <br />
             <p>
               I strongly believe in continuous learning and improving myself, so
@@ -114,7 +115,7 @@ const AboutPage = () => {
               </p>
             </div>
             <motion.div
-              className="border-l border-r rounded-lg shadow-md mt-8 w-[45%] text-headcolor font-medium overflow-hidden"
+              className="border-l border-r rounded-lg shadow-md mt-8 w-full md:w-[45%] text-headcolor font-medium overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -153,11 +154,6 @@ const AboutPage = () => {
                 transition={{ duration: 0.5 }}
               />
             </motion.div>
-            {/* <div className='mt-10  w-[35%] text-center p-2 rounded-lg bg-gradient-to-b from-white to-pink-100 text-headcolor font-extrabold text-sm hover:bg-gradient-to-b hover:from-white hover:to-pink-200 transition-all duration-75'>
-              <Link href={'/resume'} className='bg-gradient from-white to-pink-50'>
-                View Resume
-              </Link>
-            </div> */}
           </div>
         </div>
       </div>

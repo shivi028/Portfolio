@@ -1,16 +1,15 @@
 "use client";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Linkedin, Globe, MapPin } from "lucide-react";
-import Image from "next/image";
 
 export default function Resume() {
   return (
     <>
-      <div className="h-full bg-gradient-to-b from-red-100 via-red-200 to-rose-300 ">
-        <div className="m-6 font-roboto p-8">
-          <Card className="w-full max-w-3xl bg-slate-800 text-white mx-auto rounded-lg">
+      <div className="min-h-screen bg-gradient-to-b from-red-100 via-red-200 to-rose-300 -mt-6 -mb-6">
+        <div className="m-6 font-roboto py-4">
+          <Card className="w-full max-w-5xl sm:max-w-4xl md:max-w-3xl bg-slate-800 text-white mx-auto rounded-lg p-4">
             <CardHeader className="flex flex-row items-center gap-4 ">
               {/* <Avatar className="h-20 w-20">
           <AvatarImage src="/placeholder.svg?height=80&width=80" alt="Victor Eke" />
@@ -67,9 +66,9 @@ export default function Resume() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       className="lucide lucide-github"
                     >
                       <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
@@ -177,58 +176,29 @@ export default function Resume() {
                   </div>
                   <div>
                     <h3 className="font-medium">
-                      {" "}
-                      International Institute of Professional Studies, Indore
+                      Indore Institute of Science and Technology
                     </h3>
                     <p className="text-[0.800rem] text-gray-400">
                       {" "}
-                      2022 - 2027 [GRADUATION]
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-medium">
-                      Complete PYTHON Programming for Beginners Course — Udemy
-                    </h3>
-                    <p className="text-sm text-gray-500">
-                      Certificate Issued date — Dec 2023
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-medium">
-                      Leraned Advanced Python Programming — Udemy
-                    </h3>
-                    <p className="text-sm text-gray-500">
-                      Certificate Issued date — Aug 2024
+                      2022 - Present [BACHELOR OF ENGINEERING]
                     </p>
                   </div>
                 </div>
               </div>
               <hr className="mx-4" />
               <div>
-                <h2 className="font-semibold mb-2 text-[#f2bdc5]">Projects</h2>
-                <ul className="list-disc list-inside text-sm space-y-1">
-                  <li>
-                    <a href="#" className="text-[#5ccef7]  hover:underline">
-                      Music_Accertinity: Music Course Web.
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-[#5ccef7]  hover:underline">
-                      Cloudinary_SASS: A SASS product to change your frame of
-                      photo.
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-[#5ccef7]  hover:underline">
-                      Authentication: Basic Authentication Web.
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-[#5ccef7]  hover:underline">
-                      Dolphine: A E-Commerce Web.
-                    </a>
-                  </li>
-                </ul>
+                <h2 className="font-semibold mb-2 text-[#f2bdc5]">Languages</h2>
+                <div className="flex flex-wrap gap-2">
+                  {["Hindi", "English"].map((language) => (
+                    <Badge
+                      key={language}
+                      variant="secondary"
+                      className="bg-pink-100 text-slate-800"
+                    >
+                      {language}
+                    </Badge>
+                  ))}
+                </div>
               </div>
             </CardContent>
           </Card>
