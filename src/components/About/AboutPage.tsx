@@ -9,11 +9,11 @@ const AboutPage = () => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <>
-      <div className="min-h-[40vh] font-roboto m-6">
+      <div className="min-h-[70vh] font-roboto m-6 flex justify-center items-center">
         <div className="outer flex flex-col md:flex-row">
           <div className="w-full md:w-[35%] flex flex-col gap-y-3">
             <div className="text-[3.6rem] font-semibold font-roboto tracking-tighter md:tracking-tight ">
-              I’m <span className="text-headcolor">Shivi Tiwari.</span> Nice to
+              I’m <span className="text-headcolor underline decoration-2 underline-offset-2">Shivi Tiwari.</span> <br/> Nice to
               meet you.
             </div>
             <div className="mt-4">
@@ -88,12 +88,7 @@ const AboutPage = () => {
           <span className="border-l mr-2 md:-ml-3" />
           <div className="w-full md:w-[70%] p-2 text-gray-800 font-roboto text-[1.1rem] mt-4 md:mt-0">
             <p>
-              I am a self-driven, career-oriented software developer
-              specializing in front-end development and open-source, currently
-              pursuing a bachelor's degree in computer science. My expertise
-              lies in building interactive web applications on the client side.
-              Primarily working with technologies like JavaScript, Next.js,
-              TypeScript, and Python.
+            I am a self-motivated software developer with a focus on front-end development and open-source contributions, currently studying for a bachelor's degree in computer science. My skills are centered around creating dynamic web applications, with experience in technologies such as JavaScript, Next.js, TypeScript, and Python.
             </p>
             <br />
             <p>
@@ -141,10 +136,7 @@ const AboutPage = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                  If you ever spot me in the wild, don&apos;t hesitate to say
-                  hello! Let&apos;s grab a drink and geek-out over the latest
-                  advancements in front-end development or discuss our favorite
-                  programming language. ⚡
+                  If you ever catch me out in the wild, feel free to say hi! Let&apos;s grab a coffee and dive into some front-end magic or nerd out over our favorite programming languages. ⚡
                 </motion.p>
               </motion.div>
               <motion.div

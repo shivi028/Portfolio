@@ -189,7 +189,7 @@ export default function Resume() {
               <div>
                 <h2 className="font-semibold mb-2 text-[#f2bdc5]">Languages</h2>
                 <div className="flex flex-wrap gap-2">
-                  {["Hindi", "English"].map((language) => (
+                  {["Hindi", "English", "Marathi", "French - basic understanding"].map((language) => (
                     <Badge
                       key={language}
                       variant="secondary"

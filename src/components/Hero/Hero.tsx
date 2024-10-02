@@ -38,11 +38,11 @@ const Hero = () => {
                 />
               </svg>
             </span>
-            , a Full Stack Developer and AI Enthusiast.
+            , a Full Stack Developer and AI/ML Enthusiast.
           </h1>
         </div>
         <div className="lg:text-[1.3rem] text-xl relative sm:text-base mt-6 lg:font-extralight text-gray-700 z-30 text-center font-bold">
-          A Designer who likes to build interactive things with code.
+        Creative Designer focused on building interactive experiences with code.
         </div>
       </div>
 

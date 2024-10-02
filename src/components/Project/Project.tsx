@@ -17,41 +17,32 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "PROJECT ALPHA",
-    projectImg: "/Images/tic_tac_toe.png",
+    title: "Music Web using Aceternity",
+    projectImg: "/Images/Music_Project.png",
     description:
-      "A revolutionary app that changes the way we think about productivity.",
-    techStack: ["React", "Node.js", "MongoDB"],
-    githubUrl: "https://github.com/project-alpha",
-    demoUrl: "https://project-alpha-demo.com",
+      "A Basic Music Course Web build using next.js [typescript].",
+    techStack: ["Next.js", "Typescript"],
+    githubUrl: "https://github.com/shivi028/MusicApp_Aceternity",
+    demoUrl: "https://music-app-aceternity-shivi028s-projects.vercel.app/",
   },
   {
-    title: "PROJECT L",
-    projectImg: "/Images/tic_tac_toe.png",
+    title: "Todo Website - To Manage Your Daily Task",
+    projectImg: "/Images/todo.png",
     description:
-      "A revolutionary app that changes the way we think about productivity.",
-    techStack: ["React", "Node.js", "MongoDB"],
-    githubUrl: "https://github.com/project-l",
-    demoUrl: "https://project-l-demo.com",
+      "A Single platform to manage your day to day task.",
+    techStack: ["React", "tailwind", "MongoDB"],
+    githubUrl: "https://github.com/shivi028/Todo-Project/",
+    demoUrl: "https://shivi028.github.io/Todo-Project/",
   },
   {
-    title: "PROJECT C",
-    projectImg: "/Images/tic_tac_toe.png",
+    title: "X Clone",
+    projectImg: "/Images/x.png",
     description:
-      "A revolutionary app that changes the way we think about productivity.",
-    techStack: ["React", "Node.js", "MongoDB"],
-    githubUrl: "https://github.com/project-c",
-    demoUrl: "https://project-c-demo.com",
-  },
-  {
-    title: "PROJECT B",
-    projectImg: "/Images/tic_tac_toe.png",
-    description:
-      "A revolutionary app that changes the way we think about productivity.",
-    techStack: ["React", "Node.js", "MongoDB"],
-    githubUrl: "https://github.com/project-b",
-    demoUrl: "https://project-b-demo.com",
-  },
+      "A Clone Project of X [twitter]",
+    techStack: ["React", "Tailwind"],
+    githubUrl: "https://github.com/shivi028/X-Clone",
+    demoUrl: "https://shivi028.github.io/X-Clone/",
+  }
   // Add more projects here
 ];
 
@@ -98,19 +89,20 @@ export default function ProjectCards() {
               className="bg-slate-800 rounded-lg shadow-lg p-6 "
             >
               <div className="flex flex-col sm:flex-row items-center mb-4">
-                <div className="w-full sm:w-[350px] h-[280px] bg-gray-200 mb-4 sm:mb-0 flex items-center justify-center">
+                <div className="w-full sm:w-[350px] h-[200px]  mb-4 sm:mb-0 flex items-center justify-center">
                   <Image
                     src={projects[currentProject].projectImg}
                     alt={projects[currentProject].title}
-                    width={350}
-                    height={280}
+                    width={300}
+                    height={180}
+                    className="border rounded"
                   />
                 </div>
-                <div className="text-center sm:text-left">
+                <div className="text-center sm:text-left ml-4">
                   <h2 className="text-2xl font-semibold text-pink-200">
                     {projects[currentProject].title}
                   </h2>
-                  <p className="text-pink-100">
+                  <p className="text-slate-100 mt-2 text-[0.9rem] font-medium">
                     {projects[currentProject].description}
                   </p>
                 </div>
