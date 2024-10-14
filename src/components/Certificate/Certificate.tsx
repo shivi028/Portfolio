@@ -32,35 +32,14 @@ const certificates: Certificate[] = [
     issuer: "Google Cloud",
     date: "2023",
     image: "/Images/googleCloud.png",
-  },
-  {
-    id: 4,
-    title: "Machine Learning",
-    issuer: "Coursera",
-    date: "2022",
-    image: "/Images/postman certificate.png",
-  },
-  {
-    id: 5,
-    title: "Cloud Computing",
-    issuer: "AWS",
-    date: "2023",
-    image: "/Images/postman certificate.png",
-  },
-  {
-    id: 6,
-    title: "Cybersecurity",
-    issuer: "CompTIA",
-    date: "2022",
-    image: "/Images/postman certificate.png",
-  },
+  }
 ];
 
 export default function CertificateSection() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <section className="bg-gradient-to-b from-white to-[#eed6da] py-16 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-[91vh] bg-gradient-to-b from-white to-[#eed6da] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-extrabold text-headcolor sm:text-4xl text-center mb-2">
           Certifications

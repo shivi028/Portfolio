@@ -3,9 +3,11 @@ import Hero from "@/components/Hero/Hero";
 
 export default function Home() {
   return (
-   <>
-    <Hero/>
-    <ContributionGraph/>
-   </>
+    <>
+      <div className="overflow-x-hidden">
+        <Hero />
+        <ContributionGraph />
+      </div>
+    </>
   );
 }

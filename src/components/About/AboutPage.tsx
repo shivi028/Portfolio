@@ -28,7 +28,7 @@ const AboutPage = () => {
               <p className="font-medium text-xl">Say Hello!!</p>
               <div className="social-media flex gap-x-3 mt-2">
                 <div>
-                  <a href="">
+                  <a href="https://x.com/tiwarishivi028" target="_blank">
                     <Image
                       src={"/Images/twitter.svg"}
                       alt="twitter"
@@ -50,7 +50,7 @@ const AboutPage = () => {
                   </a>
                 </div>
                 <div>
-                  <a href="">
+                  <a href="https://www.instagram.com/_.shivi._28/" target="_blank">
                     <Image
                       src={"/Images/instagram.svg"}
                       alt="instagram"
