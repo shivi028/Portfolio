@@ -63,7 +63,7 @@ export default function ProjectCards() {
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8}}
           className="text-4xl font-extrabold text-slate-700 mb-8"
         >
           PROJECTS
@@ -85,7 +85,7 @@ export default function ProjectCards() {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.7 }}
               className="bg-slate-800 rounded-lg shadow-lg p-6 "
             >
               <div className="flex flex-col sm:flex-row items-center mb-4">
