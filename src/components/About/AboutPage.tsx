@@ -88,7 +88,7 @@ const AboutPage = () => {
           <span className="border-l mr-2 md:-ml-3" />
           <div className="w-full md:w-[70%] p-2 text-gray-800 font-roboto text-[1.1rem] mt-4 md:mt-0">
             <p>
-            I am a self-motivated software developer with a focus on front-end development and open-source contributions, currently studying for a bachelor's degree in computer science. My skills are centered around creating dynamic web applications, with experience in technologies such as JavaScript, Next.js, TypeScript, and Python.
+            I am a self-motivated software developer with a focus on front-end development and open-source contributions, currently studying for a bachelor&apos;s degree in computer science. My skills are centered around creating dynamic web applications, with experience in technologies such as JavaScript, Next.js, TypeScript, and Python.
             </p>
             <br />
             <p>

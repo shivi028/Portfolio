@@ -3,29 +3,29 @@ import GitHubCalendar from "react-github-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip"; // Correct import for the new version
 import { FC } from "react"; // Import Function Component type
 
+interface Activity {
+  date: string; // ISO date string
+  count: number; // Number of contributions
+  level: 0 | 1 | 2 | 3 | 4; // Intensity level as per library
+}
+
 const ContributionGraph: FC = () => {
   const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
 
-  // Function to filter the last 12 months of contributions
-  const selectLastHalfYear = (contributions: any) => {
-    const currentYear = new Date().getFullYear();
-    const currentMonth = new Date().getMonth();
-    const shownMonths = 12; // Last 12 months
+  // Function to filter and transform the last 12 months of contributions
+  const selectLastHalfYear = (contributions: Activity[]): Activity[] => {
+    const currentDate = new Date();
+    const lastYearDate = new Date();
+    lastYearDate.setFullYear(currentDate.getFullYear() - 1);
 
-    return contributions.filter((activity: any) => {
-      const date = new Date(activity.date);
-      const monthOfDay = date.getMonth();
-
-      return (
-        date.getFullYear() === currentYear &&
-        monthOfDay > currentMonth - shownMonths &&
-        monthOfDay <= currentMonth
-      );
+    return contributions.filter((activity) => {
+      const activityDate = new Date(activity.date);
+      return activityDate >= lastYearDate && activityDate <= currentDate;
     });
   };
 
   // Check if the username is provided
-  if (!username)
+  if (!username) {
     return (
       <p>
         Unable to load Contribution Graph. We could not find any GitHub
@@ -33,6 +33,7 @@ const ContributionGraph: FC = () => {
         username and the year you joined GitHub.
       </p>
     );
+  }
 
   // Define theme colors
   const explicitTheme = {

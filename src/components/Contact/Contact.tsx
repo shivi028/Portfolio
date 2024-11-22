@@ -74,7 +74,7 @@ export default function FancyContactPage() {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#f9a1af] to-headcolor"
             >
-              Let's build something amazing together!
+              Let&apos;s build something amazing together!
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, x: -20 }}

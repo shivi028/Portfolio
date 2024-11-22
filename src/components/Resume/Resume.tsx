@@ -2,7 +2,7 @@
 // import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Linkedin, Globe, MapPin } from "lucide-react";
+import { Mail, Linkedin,  MapPin } from "lucide-react";
 
 export default function Resume() {
   return (
