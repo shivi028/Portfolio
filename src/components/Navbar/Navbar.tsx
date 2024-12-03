@@ -63,6 +63,15 @@ export default function Navbar() {
                 Contact
               </Link>
             </li>
+            <li>
+              <Link
+                href="/submission"
+                className="text-sm text-blue-800 font-bold  hover:underline hover:text-[#E85A71] underline-offset-4"
+                prefetch={false}
+              >
+                Data Science Submission
+              </Link>
+            </li>
           </ul>
         </nav>
 

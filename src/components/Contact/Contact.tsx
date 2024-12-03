@@ -29,7 +29,6 @@ export default function FancyContactPage() {
     e.preventDefault();
 
     try {
-      // const res = await axios.post("/api/mail/send-email", formData);
       const res = await axios.post("/api/mail", formData);
 
 
