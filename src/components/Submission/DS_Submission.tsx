@@ -5,23 +5,23 @@ const DataScienceSubmission = () => {
   const submissions = [
     {
       question: "Basics of Coding R/Python",
-      answer: "https://www.youtube.com/watch?v=xC-c7E5PK0Y",
+      answer: "https://youtu.be/Wb8AVCLW31I",
     },
     {
       question: "Data Preparation",
-      answer: "https://www.youtube.com/watch?v=Ht3N2XfN-p4",
+      answer: "https://youtu.be/-iAnjFPSsak",
     },
     {
       question: "Exploratory Data Analysis",
-      answer: "https://www.youtube.com/watch?v=niJWhEmoxlA",
+      answer: "https://youtu.be/IKiDJwZP7cQ",
     },
     {
       question: "Data Preparation Phase to Model the Data",
-      answer: "https://www.youtube.com/watch?v=f0t-TPxsxYQ",
+      answer: "https://youtu.be/yM6s7ANhRjo",
     },
     {
       question: "Model Evaluation",
-      answer: "https://www.youtube.com/watch?v=Kdsp6soqA7o",
+      answer: "https://youtu.be/PmPqKZx4Dlg",
     },
     {
       question: "Naive Bayes classification",
@@ -29,19 +29,19 @@ const DataScienceSubmission = () => {
     },
     {
       question: "Neural Networks",
-      answer: "https://www.youtube.com/watch?v=ua-CiDNNj30",
+      answer: "https://youtu.be/w7Pez36VrVs",
     },
     {
       question: "Clustering",
-      answer: "https://www.youtube.com/watch?v=cI3t02I0NQA",
+      answer: "https://youtu.be/eYx00mF4Sew",
     },
     {
       question: "Regression Modeling",
-      answer: "https://www.youtube.com/watch?v=2JUuCt4e2Mw",
+      answer: "https://youtu.be/-9Qy19DyueM",
     },
     {
       question: "Dimension Reduction",
-      answer: "https://www.youtube.com/watch?v=KMpOJQ7s5D0",
+      answer: "https://youtu.be/4wxZbeqBItY",
     },
     {
       question: "Logistic Regression Modeling",
