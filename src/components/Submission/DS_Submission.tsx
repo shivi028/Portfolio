@@ -25,7 +25,7 @@ const DataScienceSubmission = () => {
     },
     {
       question: "Naive Bayes classification",
-      answer: "https://www.youtube.com/watch?v=4XUE3Yy4joQ",
+      answer: "https://www.youtube.com/watch?v=O23aXVzJFbg",
     },
     {
       question: "Neural Networks",
@@ -45,11 +45,11 @@ const DataScienceSubmission = () => {
     },
     {
       question: "Logistic Regression Modeling",
-      answer: "https://www.youtube.com/watch?v=ZH8PCT6TgoA",
+      answer: "https://youtu.be/P29Wh1YIw68",
     },
     {
       question: "Assosciation Rules",
-      answer: "https://www.youtube.com/watch?v=1PYcW-7fPSE",
+      answer: "https://youtu.be/e6LNM5Kpufg",
     },
   ];
 
