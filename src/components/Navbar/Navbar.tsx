@@ -116,6 +116,12 @@ export default function Navbar() {
                 >
                   Contact
                 </Link>
+                <Link
+                  href="/submission"
+                  className="flex text-blue-600 w-full items-center py-2 text-lg font-semibold"
+                >
+                  Data Science Submission
+                </Link>
               </div>
             </SheetContent>
           </Sheet>

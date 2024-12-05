@@ -32,6 +32,13 @@ const certificates: Certificate[] = [
     issuer: "Google Cloud",
     date: "2023",
     image: "/Images/googleCloud.png",
+  },
+  {
+    id: 4,
+    title: "VAC IOT 2024",
+    issuer: "DAVV, Indore",
+    date: "2024",
+    image: "/Images/iot.jpg",
   }
 ];
 
